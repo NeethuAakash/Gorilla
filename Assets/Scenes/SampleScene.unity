@@ -418,7 +418,7 @@ Transform:
   m_GameObject: {fileID: 64072882}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -1.2, z: 0}
+  m_LocalPosition: {x: -0.19, y: 1.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1243,12 +1243,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 661975074271118547, guid: 63bfc71f62743444ca421e070ffe7c7c, type: 3}
+  m_Sprite: {fileID: 661975074271118547, guid: f4559506e2df140c791e3cd063704cf6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.22, y: 1.3}
+  m_Size: {x: 2.56, y: 2.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3049,7 +3049,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - time: 28
+  - time: 27
     action:
       m_PersistentCalls:
         m_Calls:
@@ -5290,7 +5290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d77c7064c15514d9f95c7cc675144681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.26
+      value: -5.56
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d77c7064c15514d9f95c7cc675144681, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10250,12 +10250,12 @@ MonoBehaviour:
   voiceDatabase:
   - voiceID: 0
     english: {fileID: 8300000, guid: 50120dd80b0674d2591b86942331316f, type: 3}
-    hindi: {fileID: 8300000, guid: 6f80a3ddaefc84912a563e9fc2be65cf, type: 3}
-    malayalam: {fileID: 8300000, guid: ff32b53b3ccd542ecb36cd03a837134a, type: 3}
+    hindi: {fileID: 8300000, guid: cbcf4bd81489049b7ad29624d6588647, type: 3}
+    malayalam: {fileID: 8300000, guid: 47cca073a8f62468c8fc514da0e9fa62, type: 3}
   - voiceID: 1
     english: {fileID: 8300000, guid: 82c23ef644815421394e1cb7c585f3b7, type: 3}
-    hindi: {fileID: 8300000, guid: 365c9ef0739474df3a2db783c1221bc8, type: 3}
-    malayalam: {fileID: 8300000, guid: 05ec8fd5d1d284e6fa3380390e38cd01, type: 3}
+    hindi: {fileID: 8300000, guid: cdc9f16714407433185d568d743f35cd, type: 3}
+    malayalam: {fileID: 8300000, guid: 5cee647c5f00d4e70a6d7d7ea0c94d8d, type: 3}
   - voiceID: 2
     english: {fileID: 8300000, guid: 642837168f6744a4dabe4a83dffa40f5, type: 3}
     hindi: {fileID: 8300000, guid: 4b6556398498e45228cecc86099c7285, type: 3}
@@ -12306,7 +12306,7 @@ Transform:
   m_GameObject: {fileID: 1689870063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8, y: 2.3, z: 0}
+  m_LocalPosition: {x: -4.99, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12397,7 +12397,7 @@ Transform:
   m_GameObject: {fileID: 1713203644}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.85, y: 1.7, z: 0}
+  m_LocalPosition: {x: -4.87, y: 1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13404,8 +13404,8 @@ Transform:
   m_GameObject: {fileID: 1869869350}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.91, y: 3.33, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.14, y: 3.08, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1656594108}
