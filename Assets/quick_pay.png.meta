@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6388a9e0a83314afd8939cb15bfc1767
+guid: bd27f1722816c4cedab6969a1c71a953
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3072112393244117240
-    second: tax_1_0
+      213: 7961822152252981719
+    second: quick_pay_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tax_1_0
+      name: quick_pay_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 406
+        height: 179
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f80465e1f552aa20800000000000000
-      internalID: 3072112393244117240
+      spriteID: 7d100ed50131e7e60800000000000000
+      internalID: 7961822152252981719
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tax_1_0: 3072112393244117240
+      quick_pay_0: 7961822152252981719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

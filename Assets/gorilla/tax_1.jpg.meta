@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7c1f5be39a74f4cac94576708aad5f19
+guid: e808634c5feb741ae987f7a2d0f81f01
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8310613873912168059
-    second: gorilla_bg_0
+      213: 3072112393244117240
+    second: tax_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gorilla_bg_0
+      name: tax_1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1593
-        height: 855
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 581480496b4caac80800000000000000
-      internalID: -8310613873912168059
+      spriteID: 8f80465e1f552aa20800000000000000
+      internalID: 3072112393244117240
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      gorilla_bg_0: -8310613873912168059
+      tax_1_0: 3072112393244117240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,7 +9,8 @@ public enum VoiceID
     AddProduct,
     SalePOS,
     RubicPOS,
-    Purchase
+    Purchase,
+    FeatureSelection
 }
 
 [System.Serializable]

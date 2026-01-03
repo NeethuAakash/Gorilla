@@ -3,6 +3,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GorillaScreen : MonoBehaviour
 {
@@ -39,8 +40,12 @@ public class GorillaScreen : MonoBehaviour
     public RuntimeAnimatorController newController1;
     public RuntimeAnimatorController newController2;
     public List<TimedAction> timedActions;
-    void Awake()
+    public GameObject featureSelectionScreen;
+
+    public Vector3 startPos;
+    void Start()
     {
+        // print("gorilla start");
         StartCoroutine(PlayVoiceWithTimedActions());
     }
 
@@ -193,7 +198,7 @@ public class GorillaScreen : MonoBehaviour
         if(!audioSource.isPlaying)
         {
             character.GetComponent<Animator>().SetBool("isVoiceComplete",true);
-            Invoke("ExitScreen",10f);
+            // Invoke("ExitScreen",10f);
         }
     }
 
@@ -201,5 +206,24 @@ public class GorillaScreen : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    void OnEnable()
+    {
+        audioSource.UnPause();
+        StartCoroutine(PlayVoiceWithTimedActions());
+        ResetScreen();
+    }
+
+    void ResetScreen()
+    {
+        gorillaPopup.SetActive(false);
+        SkinnedMeshRenderer[] meshes = character.gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
+
+        foreach (SkinnedMeshRenderer mesh in meshes)
+        {
+            mesh.enabled = true;
+        }
+    }
+
 }
 
