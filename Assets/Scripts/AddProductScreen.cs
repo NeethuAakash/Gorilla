@@ -12,12 +12,17 @@ public class AddProductScreen: MonoBehaviour
 
     public GameObject addProdscharacter;
 
+    public PlayerButtonsManager playerButtonsManager;
+
     public GameObject Position;
     public GameObject entries;
     public GameObject btn_settings;
+    public GameObject btn_setDefault;
+    public GameObject setDefaultPopup;
     public GameObject entriHL;
     public GameObject barcodeHL;
     public GameObject btn_quickPay;
+    public Sprite addProdsBg;
     public Sprite settingsBg;
     public Sprite salesBg;
     public Sprite salesOneItem;
@@ -31,8 +36,6 @@ public class AddProductScreen: MonoBehaviour
     void Awake()
     {
         StartCoroutine(PlayVoiceWithTimedActions());
-
-        // Invoke("ShowPopup",5f);
     }
     IEnumerator PlayVoiceWithTimedActions()
     {
@@ -84,8 +87,21 @@ public class AddProductScreen: MonoBehaviour
         popupBg.GetComponent<SpriteRenderer>().sprite = settingsBg;
     }
 
-    public void HideSettingsScreen()
+    public void ShowSetDefaultBtn()
     {
+        popupBg.GetComponent<SpriteRenderer>().sprite = addProdsBg;
+        btn_setDefault.SetActive(true);
+    }
+
+    public void ShowSetDefaultPopup()
+    {
+        setDefaultPopup.SetActive(true);
+    }
+
+    public void HideSetDefault()
+    {
+        btn_setDefault.SetActive(false);
+        setDefaultPopup.SetActive(false);
         popupBg.GetComponent<SpriteRenderer>().sprite = salesBg;
     }
 
@@ -124,7 +140,8 @@ public class AddProductScreen: MonoBehaviour
     {
         if(!audioSource.isPlaying)
         {
-            gameObject.SetActive(false);
+            // gameObject.SetActive(false);
+            playerButtonsManager.onBackButtonPressed(gameObject);
         }
     }
     void OnEnable()
@@ -137,6 +154,7 @@ public class AddProductScreen: MonoBehaviour
     void ResetScreen()
     {
         addProdsPopup.SetActive(false);
+        popupBg.GetComponent<SpriteRenderer>().sprite = addProdsBg;
         SkinnedMeshRenderer[] meshes = character.gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
 
         foreach (SkinnedMeshRenderer mesh in meshes)

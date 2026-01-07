@@ -42,6 +42,8 @@ public class GorillaScreen : MonoBehaviour
     public List<TimedAction> timedActions;
     public GameObject featureSelectionScreen;
 
+    public PlayerButtonsManager playerButtonsManager;
+
     public Vector3 startPos;
     void Start()
     {
@@ -150,6 +152,7 @@ public class GorillaScreen : MonoBehaviour
 
     public void HideSetDefaultPopup()
     {
+        btn_setDefault.SetActive(false);
         setDefaultpopup.SetActive(false);
         gorillaPopup.SetActive(false);
         SkinnedMeshRenderer[] meshes = character.gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
@@ -198,13 +201,13 @@ public class GorillaScreen : MonoBehaviour
         if(!audioSource.isPlaying)
         {
             character.GetComponent<Animator>().SetBool("isVoiceComplete",true);
-            // Invoke("ExitScreen",10f);
+            Invoke("ExitScreen",10f);
         }
     }
 
     void ExitScreen()
     {
-        gameObject.SetActive(false);
+        playerButtonsManager.onBackButtonPressed(gameObject);
     }
 
     void OnEnable()
@@ -217,6 +220,7 @@ public class GorillaScreen : MonoBehaviour
     void ResetScreen()
     {
         gorillaPopup.SetActive(false);
+        popupBg.GetComponent<SpriteRenderer>().sprite = gorillaBg;
         SkinnedMeshRenderer[] meshes = character.gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
 
         foreach (SkinnedMeshRenderer mesh in meshes)

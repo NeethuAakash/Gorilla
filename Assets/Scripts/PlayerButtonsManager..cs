@@ -56,6 +56,6 @@ public class PlayerButtonsManager : MonoBehaviour
         }
         currentScreen.SetActive(false);
         featureSelectionScreen.SetActive(true);
-        // print("onBackButtonPressed");
+        print("onBackButtonPressed"+currentScreen.name);
     }
 }
