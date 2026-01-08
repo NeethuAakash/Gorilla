@@ -12,7 +12,8 @@ public class VoiceTrigger : MonoBehaviour
 
     public void Play()
     {
-        // Debug.Log("Play voice");
+        // Debug.Log("Play voice" + voiceID);
+        // Debug.Log("Play voice:source" + audioSource);
         VoiceManager.Instance.PlayVoice(voiceID, audioSource);
     }
 }

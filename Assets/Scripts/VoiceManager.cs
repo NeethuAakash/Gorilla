@@ -7,10 +7,10 @@ public enum VoiceID
     Menu,
     Gorilla,
     AddProduct,
-    SalePOS,
+    FeatureSelection,
     RubicPOS,
-    Purchase,
-    FeatureSelection
+    Catalogue,
+    Purchase
 }
 
 [System.Serializable]
@@ -61,10 +61,11 @@ public class VoiceManager : MonoBehaviour
 
     public void PlayVoice(VoiceID id, AudioSource source)
     {
+        Debug.Log("PlayVoice:source"+source);
         Language lang = LanguageManager.Instance.currentLanguage;
         // Debug.Log("PlayVoice:language"+lang);
         AudioClip clip = voiceDict[id].GetClip(lang);
-
+        // Debug.Log("PlayVoice:clip"+clip);
         source.clip = clip;
         source.Play();
     }
