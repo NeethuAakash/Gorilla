@@ -10,6 +10,7 @@ public enum VoiceID
     FeatureSelection,
     RubicPOS,
     Catalogue,
+    WUThroughBill,
     Purchase
 }
 

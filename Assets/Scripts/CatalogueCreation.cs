@@ -11,15 +11,18 @@ public class CatalogueCreation : MonoBehaviour
     public PlayerButtonsManager playerButtonsManager;
     public GameObject character;
 
-    public GameObject startTransform;
+    public GameObject topPosition;
     public GameObject popup;
     public GameObject popupBg;
     public GameObject btnProdCatalogue;
     public GameObject position_TR;
+    public GameObject startTransform;
     public GameObject HL_ticks;
+    public GameObject allTick;
     public GameObject HL_category;
     public GameObject btnBulkImageUpdate;
     public GameObject btnCatalogueStyle;
+    public GameObject btnUtilities;
 
     public RenderTexture renderTexture;
     public VideoPlayer styleSelectionVidPlayer;
@@ -58,6 +61,7 @@ public class CatalogueCreation : MonoBehaviour
         {
             styleSelectionVidPlayer.gameObject.SetActive(false);
             styleSelectionrawImage.enabled = false;
+            ClearRenderTexture();
             playerButtonsManager.onBackButtonPressed(gameObject);
         }
     }
@@ -68,8 +72,16 @@ public class CatalogueCreation : MonoBehaviour
         popup.SetActive(true);
     }
 
+    public void HL_utilities()
+    {
+        btnUtilities.SetActive(true);
+        character.transform.position = topPosition.transform.position;
+        character.transform.localScale = topPosition.transform.localScale;
+    }
+
     public void HighlightProdCatalogueBtn()
     {
+        btnUtilities.SetActive(false);
         btnProdCatalogue.SetActive(true);
         SetCharacterPositionTo(btnProdCatalogue);
         character.GetComponent<Animator>().SetTrigger("doTouch");
@@ -108,9 +120,17 @@ public class CatalogueCreation : MonoBehaviour
         character.GetComponent<Animator>().SetTrigger("doTouch");
     }
 
-    public void HL_bulkImageUpdate()
+    public void HL_allticks()
     {
         HL_ticks.SetActive(false);
+        allTick.SetActive(true);
+        SetCharacterPositionTo(allTick);
+        character.GetComponent<Animator>().SetTrigger("doTouch");
+    }
+
+    public void HL_bulkImageUpdate()
+    {
+        allTick.SetActive(false);
         btnBulkImageUpdate.SetActive(true);
         SetCharacterPositionTo(btnBulkImageUpdate);
         character.GetComponent<Animator>().SetTrigger("doTouch");
@@ -139,15 +159,16 @@ public class CatalogueCreation : MonoBehaviour
 
     public void ShowCatalogMaking()
     {
-        styleSelectionVidPlayer.clip = makingCatalog;
-        styleSelectionVidPlayer.playbackSpeed = 2.5f;
-        styleSelectionVidPlayer.Play();
+        // styleSelectionVidPlayer.clip = makingCatalog;
+        // styleSelectionVidPlayer.playbackSpeed = 2.5f;
+        // styleSelectionVidPlayer.Play();
     }
 
     public void HideCatalogMaking()
     {
-        styleSelectionVidPlayer.gameObject.SetActive(false);
-        styleSelectionrawImage.enabled = false;
+        // styleSelectionVidPlayer.gameObject.SetActive(false);
+        // styleSelectionrawImage.enabled = false;
+        // ClearRenderTexture();
     }
 
     void OnEnable()
