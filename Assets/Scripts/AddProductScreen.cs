@@ -161,6 +161,13 @@ public class AddProductScreen: MonoBehaviour
         {
             mesh.enabled = true;
         }
+        btn_settings.SetActive(false);
+        entries.SetActive(false);
+        btn_setDefault.SetActive(false);
+        setDefaultPopup.SetActive(false);
+        entriHL.SetActive(false);
+        barcodeHL.SetActive(false);
+        btn_quickPay.SetActive(false);
     }
 }
 
