@@ -183,6 +183,14 @@ public class CatalogueCreation : MonoBehaviour
         popupBg.GetComponent<SpriteRenderer>().sprite = bgutilitiesView;
         character.transform.position = startTransform.transform.position;
         character.transform.localScale = startTransform.transform.localScale;
+    
+        btnUtilities.SetActive(false);
+        btnProdCatalogue.SetActive(false);
+        HL_category.SetActive(false);
+        HL_ticks.SetActive(false);
+        allTick.SetActive(false);
+        btnBulkImageUpdate.SetActive(false);
+        btnCatalogueStyle.SetActive(false);
     }
     void ClearRenderTexture()
     {
