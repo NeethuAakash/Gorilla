@@ -44,7 +44,7 @@ public class GorillaScreen : MonoBehaviour
 
     public PlayerButtonsManager playerButtonsManager;
 
-    public Vector3 startPos;
+    public GameObject startPos;
     void Start()
     {
         // print("gorilla start");
@@ -221,12 +221,27 @@ public class GorillaScreen : MonoBehaviour
     {
         gorillaPopup.SetActive(false);
         popupBg.GetComponent<SpriteRenderer>().sprite = gorillaBg;
+        mainBg.GetComponent<SpriteRenderer>().sprite = menuBg;
+        menuBtns.SetActive(true);
         SkinnedMeshRenderer[] meshes = character.gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
 
         foreach (SkinnedMeshRenderer mesh in meshes)
         {
             mesh.enabled = true;
         }
+        
+        character.transform.position = startPos.transform.position;
+        PCandPN.SetActive(false);
+        saleEntry1.SetActive(false);
+        netpay1.SetActive(false);
+        saleEntry2.SetActive(false);
+        bill_discount.SetActive(false);
+        bill_quantity.SetActive(false);
+        btn_setDefault.SetActive(false);
+        setDefaultpopup.SetActive(false);
+        tax_report.SetActive(false);
+        sales_register.SetActive(false);
+        tax_highlight.SetActive(false);
     }
 
 }
