@@ -215,6 +215,12 @@ public class RubicPOSScreen: MonoBehaviour
         {
             mesh.enabled = true;
         }
+
+        HL_AIImage.SetActive(false);
+        HL_Fruits.SetActive(false);
+        HL_wholesale.SetActive(false);
+        updatePrice.SetActive(false);
+        quickPay.SetActive(false);
     }
 }
 
