@@ -11,6 +11,7 @@ public enum VoiceID
     RubicPOS,
     Catalogue,
     WUThroughBill,
+    DSale,
     Purchase
 }
 

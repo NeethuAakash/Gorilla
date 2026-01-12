@@ -78,6 +78,8 @@ public class WUThroughBill : MonoBehaviour
     {
         rawImage.enabled = true;
         videoPlayer.gameObject.SetActive(true);
+        ClearRenderTexture();
+        videoPlayer.Play();
         // mainBg.GetComponent<SpriteRenderer>().sprite = enterName;
     }
 
@@ -108,6 +110,7 @@ public class WUThroughBill : MonoBehaviour
     void OnEnable()
     {
         rawImage.enabled = false;
+        videoPlayer.gameObject.SetActive(false);
         audioSource.UnPause();
         StartCoroutine(PlayVoiceWithTimedActions());
         ResetScreen();
