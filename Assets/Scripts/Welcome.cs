@@ -5,7 +5,6 @@ using UnityEngine;
 public class Welcome : MonoBehaviour
 {
     public AudioSource audioSource;
-    public GameObject mainMenuScreen;
 
     public GameObject character;
 
@@ -15,8 +14,6 @@ public class Welcome : MonoBehaviour
         {
             character.GetComponent<Animator>().SetBool("isVoiceComplete",true);
             // Debug.Log("Audio finished playing");
-            // mainMenuScreen.SetActive(true);      //TODO:Uncomment
-            // gameObject.SetActive(false); 
         }
     }
 }

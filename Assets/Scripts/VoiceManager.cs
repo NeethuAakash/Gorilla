@@ -12,6 +12,7 @@ public enum VoiceID
     Catalogue,
     WUThroughBill,
     DSale,
+    BarcodeDesigns,
     Purchase
 }
 
