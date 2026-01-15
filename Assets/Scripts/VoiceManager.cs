@@ -13,6 +13,7 @@ public enum VoiceID
     WUThroughBill,
     DSale,
     BarcodeDesigns,
+    InvoiceCreation,
     Purchase
 }
 
