@@ -37,10 +37,11 @@ public class BarcodeDesigns : MonoBehaviour
     public Sprite barcodeT8;
     public Sprite barcodeT16;
     
- public List<TimedAction> timedActions;
-
-    void Awake()
+    public List<TimedAction> timedActions;
+    bool hasStarted = false;
+    void Start()
     {
+        hasStarted = true;
         StartCoroutine(PlayVoiceWithTimedActions());
     }
     IEnumerator PlayVoiceWithTimedActions()
@@ -97,7 +98,7 @@ public class BarcodeDesigns : MonoBehaviour
         bg.GetComponent<SpriteRenderer>().sprite = barcodeT8;
         SetCharacterToShow(btnT8);
     }
-      public void ShowDesignT16()
+    public void ShowDesignT16()
     {
         bg.GetComponent<SpriteRenderer>().sprite = barcodeT16;
         SetCharacterToShow(btnT16);
@@ -131,6 +132,8 @@ public class BarcodeDesigns : MonoBehaviour
 
     void OnEnable()
     {
+        if(!hasStarted)
+            return;
         ResetScreen();
         audioSource.UnPause();
         StartCoroutine(PlayVoiceWithTimedActions());
@@ -167,7 +170,7 @@ public class BarcodeDesigns : MonoBehaviour
         character.transform.position = pos;
         character.GetComponent<Animator>().SetTrigger("doTouch");
     }
-        void ClearRenderTexture()
+    void ClearRenderTexture()
     {
         RenderTexture activeRT = RenderTexture.active;
         RenderTexture.active = renderTexture;

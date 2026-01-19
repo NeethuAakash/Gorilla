@@ -65,7 +65,7 @@ public class VoiceManager : MonoBehaviour
 
     public void PlayVoice(VoiceID id, AudioSource source)
     {
-        Debug.Log("PlayVoice:source"+source);
+        // Debug.Log("PlayVoice:source"+source);
         Language lang = LanguageManager.Instance.currentLanguage;
         // Debug.Log("PlayVoice:language"+lang);
         AudioClip clip = voiceDict[id].GetClip(lang);

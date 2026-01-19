@@ -32,9 +32,10 @@ public class CatalogueCreation : MonoBehaviour
     public Sprite bgCatalogueWithAllImages;
     public VideoClip makingCatalog;
     public List<TimedAction> timedActions;
-
+    bool hasStarted = false;
    void Start()
     {
+        hasStarted = true;
         styleSelectionrawImage.enabled = false;
         StartCoroutine(PlayVoiceWithTimedActions());
     }
@@ -173,6 +174,8 @@ public class CatalogueCreation : MonoBehaviour
 
     void OnEnable()
     {
+        if(!hasStarted)
+            return;
         audioSource.UnPause();
         StartCoroutine(PlayVoiceWithTimedActions());
         ResetScreen();

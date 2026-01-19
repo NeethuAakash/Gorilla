@@ -23,9 +23,10 @@ public class DSale : MonoBehaviour
     public VideoPlayer videoPlayer;
     public RenderTexture renderTexture;
     public List<TimedAction> timedActions;
-
-    void Awake()
+    bool hasStarted = false;
+    void Start()
     {
+        hasStarted = true;
         StartCoroutine(PlayVoiceWithTimedActions());
     }
     IEnumerator PlayVoiceWithTimedActions()
@@ -74,12 +75,12 @@ public class DSale : MonoBehaviour
     }
     public void ShowDsaleWindow()
     {
+        HL_DSale.SetActive(false);
         bg.GetComponent<SpriteRenderer>().sprite = DsaleBg;
     }
 
     public void StartVideo()
     {
-        HL_DSale.SetActive(false);
         ClearRenderTexture();
         rawImage.enabled = true;
         videoPlayer.gameObject.SetActive(true);
@@ -98,6 +99,8 @@ public class DSale : MonoBehaviour
     }
     void OnEnable()
     {
+        if(!hasStarted)
+            return;
         rawImage.enabled = false;
         videoPlayer.gameObject.SetActive(false);
         audioSource.UnPause();

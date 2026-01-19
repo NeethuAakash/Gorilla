@@ -33,8 +33,10 @@ public class AddProductScreen: MonoBehaviour
     public AudioSource audioSource;
     public List<TimedAction> timedActions;
 
-    void Awake()
+    bool hasStarted = false;
+    void Start()
     {
+        hasStarted = true;
         StartCoroutine(PlayVoiceWithTimedActions());
     }
     IEnumerator PlayVoiceWithTimedActions()
@@ -146,6 +148,8 @@ public class AddProductScreen: MonoBehaviour
     }
     void OnEnable()
     {
+        if(!hasStarted)
+        return;
         audioSource.UnPause();
         StartCoroutine(PlayVoiceWithTimedActions());
         ResetScreen();

@@ -30,9 +30,10 @@ public class WUThroughBill : MonoBehaviour
 
     public List<TimedAction> timedActions;
     public PlayerButtonsManager playerButtonManager;
-
-    void Awake()
+    bool hasStarted = false;
+    void Start()
     {
+        hasStarted = true;
         StartCoroutine(PlayVoiceWithTimedActions());
     }
     IEnumerator PlayVoiceWithTimedActions()
@@ -109,6 +110,8 @@ public class WUThroughBill : MonoBehaviour
 
     void OnEnable()
     {
+        if(!hasStarted)
+            return;
         rawImage.enabled = false;
         videoPlayer.gameObject.SetActive(false);
         audioSource.UnPause();

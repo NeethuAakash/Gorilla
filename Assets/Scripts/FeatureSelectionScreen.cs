@@ -12,6 +12,7 @@ public class FeatureSelectionScreen : MonoBehaviour
     }
     public void OnFeatureSelected(GameObject _selectedFeature)
     {
+        // print("OnFeatureSelected" + _selectedFeature.name);
         gameObject.SetActive(false);
         _selectedFeature.SetActive(true);
     }

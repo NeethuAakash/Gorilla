@@ -45,8 +45,10 @@ public class GorillaScreen : MonoBehaviour
     public PlayerButtonsManager playerButtonsManager;
 
     public GameObject startPos;
+    bool hasStarted = false;
     void Start()
     {
+        hasStarted = true;
         // print("gorilla start");
         StartCoroutine(PlayVoiceWithTimedActions());
     }
@@ -212,6 +214,8 @@ public class GorillaScreen : MonoBehaviour
 
     void OnEnable()
     {
+        if (!hasStarted)
+        return;
         audioSource.UnPause();
         StartCoroutine(PlayVoiceWithTimedActions());
         ResetScreen();

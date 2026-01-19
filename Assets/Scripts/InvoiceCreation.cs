@@ -38,8 +38,10 @@ public class InvoiceCreation : MonoBehaviour
 
     public List<TimedAction> timedActions;
     public PlayerButtonsManager playerButtonsManager;
-    void Awake()
+    bool hasStarted = false;
+    void Start()
     {
+        hasStarted = true;
         StartCoroutine(PlayVoiceWithTimedActions());
     }
     IEnumerator PlayVoiceWithTimedActions()
@@ -128,7 +130,7 @@ public class InvoiceCreation : MonoBehaviour
         ClearRenderTexture();
         rawImage.enabled = true;
         videoPlayer.gameObject.SetActive(true);
-        videoPlayer.playbackSpeed = 2f;
+        videoPlayer.playbackSpeed = 1f;
         videoPlayer.Play();
     }
 
@@ -150,7 +152,7 @@ public class InvoiceCreation : MonoBehaviour
         rawImage.enabled = true;
         videoPlayer.gameObject.SetActive(true);
         videoPlayer.clip = videoClip;
-        videoPlayer.playbackSpeed = 1.2f;
+        videoPlayer.playbackSpeed = 0.8f;
         videoPlayer.Play();
     }
 
@@ -174,6 +176,8 @@ public class InvoiceCreation : MonoBehaviour
     }
     void OnEnable()
     {
+        if(!hasStarted)
+            return;
         audioSource.UnPause();
         StartCoroutine(PlayVoiceWithTimedActions());
         ResetScreen();

@@ -34,12 +34,14 @@ public class RubicPOSScreen: MonoBehaviour
     public AudioSource audioSource;
     public List<TimedAction> timedActions;
 
+    public VideoClip showNewItems;
     public VideoClip addingNewItems;
     public VideoClip creatingAIImages;
     public VideoClip updatingPrice;
-
-    void Awake()
+    bool hasStarted = false;
+    void Start()
     {
+        hasStarted = true;
         rawImage.enabled = false;
         StartCoroutine(PlayVoiceWithTimedActions());
     }
@@ -104,7 +106,9 @@ public class RubicPOSScreen: MonoBehaviour
     {
         videoPlayer.gameObject.SetActive(true);
         rawImage.enabled = true;
-        ClearRenderTexture();
+        // ClearRenderTexture();
+        videoPlayer.clip = showNewItems;
+        videoPlayer.playbackSpeed = .5f;
         videoPlayer.Play();
     }
 
@@ -190,6 +194,8 @@ public class RubicPOSScreen: MonoBehaviour
     }
     void OnEnable()
     {
+        if(!hasStarted)
+            return;
         audioSource.UnPause();
         StartCoroutine(PlayVoiceWithTimedActions());
         ResetScreen();
