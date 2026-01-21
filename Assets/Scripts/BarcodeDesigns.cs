@@ -126,7 +126,7 @@ public class BarcodeDesigns : MonoBehaviour
     public void ShowDesignT17()
     {
         videoPlayer.clip = clipT17;
-        videoPlayer.playbackSpeed = 2f;
+        videoPlayer.playbackSpeed = 1.4f;
         videoPlayer.Play();
     }
 

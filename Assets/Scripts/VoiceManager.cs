@@ -14,7 +14,8 @@ public enum VoiceID
     DSale,
     BarcodeDesigns,
     InvoiceCreation,
-    Purchase
+    Purchase,
+    AIPurchase
 }
 
 [System.Serializable]
