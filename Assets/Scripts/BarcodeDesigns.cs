@@ -27,6 +27,7 @@ public class BarcodeDesigns : MonoBehaviour
     public RawImage rawImage;
     public RenderTexture renderTexture;
     public VideoClip clipT17;
+    public VideoClip clipT2;
 
     public PlayerButtonsManager playerButtonsManager;
 
@@ -88,23 +89,35 @@ public class BarcodeDesigns : MonoBehaviour
         character.transform.position = startTransform.transform.position;
     }
 
+    public void ShowDesignT1()
+    {
+        btnT1.SetActive(true);
+    }
     public void ShowDesignT2()
     {
+        btnT1.SetActive(false);
+        btnT16.SetActive(false);
+        btnT2.SetActive(true);
         bg.GetComponent<SpriteRenderer>().sprite = barcodeT2;
         SetCharacterToShow(btnT2);
     }
      public void ShowDesignT8()
     {
+        btnT2.SetActive(false);
+        btnT8.SetActive(true);
         bg.GetComponent<SpriteRenderer>().sprite = barcodeT8;
         SetCharacterToShow(btnT8);
     }
     public void ShowDesignT16()
     {
+        btnT8.SetActive(false);
+        btnT16.SetActive(true);
         bg.GetComponent<SpriteRenderer>().sprite = barcodeT16;
         SetCharacterToShow(btnT16);
     }
     public void Highlight_apply()
     {
+        btnT2.SetActive(false);
         HL_apply.SetActive(true);
         SetCharacterToShow(HL_apply);
     }
@@ -117,14 +130,16 @@ public class BarcodeDesigns : MonoBehaviour
 
     public void ShowT2Video()
     {
-        ClearRenderTexture();
         rawImage.enabled = true;
+        ClearRenderTexture();
+        videoPlayer.clip = clipT2;
         videoPlayer.gameObject.SetActive(true);
         videoPlayer.Play();
     }
     
     public void ShowDesignT17()
     {
+        ClearRenderTexture();
         videoPlayer.clip = clipT17;
         videoPlayer.playbackSpeed = 1.4f;
         videoPlayer.Play();
@@ -151,6 +166,10 @@ public class BarcodeDesigns : MonoBehaviour
         HL_generalBarcode.SetActive(false);
         HL_apply.SetActive(false);
         HL_printPreview.SetActive(false);
+        btnT1.SetActive(false);
+        btnT2.SetActive(false);
+        btnT8.SetActive(false);
+        btnT16.SetActive(false);
     }
     void Update()
     {

@@ -106,7 +106,7 @@ public class RubicPOSScreen: MonoBehaviour
     {
         videoPlayer.gameObject.SetActive(true);
         rawImage.enabled = true;
-        // ClearRenderTexture();
+        ClearRenderTexture();
         videoPlayer.clip = showNewItems;
         videoPlayer.playbackSpeed = .5f;
         videoPlayer.Play();
@@ -114,6 +114,7 @@ public class RubicPOSScreen: MonoBehaviour
 
     public void PlayNewProds()
     {
+        ClearRenderTexture();
         videoPlayer.clip = addingNewItems;
         videoPlayer.playbackSpeed = 15f;
         videoPlayer.Play();
@@ -121,6 +122,7 @@ public class RubicPOSScreen: MonoBehaviour
 
     public void PlayCreatingImages()
     {
+        ClearRenderTexture();
         videoPlayer.clip = creatingAIImages;
         videoPlayer.playbackSpeed = 3f;
         videoPlayer.Play();
@@ -128,7 +130,7 @@ public class RubicPOSScreen: MonoBehaviour
 
     public void ShowUpdatePrice()
     {
-   
+        ClearRenderTexture();
         // updatePrice.SetActive(true);
         videoPlayer.clip = updatingPrice;
         videoPlayer.playbackSpeed = 3.5f;
@@ -190,6 +192,9 @@ public class RubicPOSScreen: MonoBehaviour
         if(!audioSource.isPlaying)
         {
             playerButtonsManager.onBackButtonPressed(gameObject);
+            videoPlayer.gameObject.SetActive(false);
+            rawImage.enabled = false;
+            ClearRenderTexture();
         }
     }
     void OnEnable()

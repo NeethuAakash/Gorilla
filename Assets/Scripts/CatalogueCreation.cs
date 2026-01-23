@@ -152,9 +152,9 @@ public class CatalogueCreation : MonoBehaviour
     public void ShowCatalogStyleSelection()
     {
         btnCatalogueStyle.SetActive(false);
+        ClearRenderTexture();
         styleSelectionVidPlayer.gameObject.SetActive(true);
         styleSelectionrawImage.enabled = true;
-        ClearRenderTexture();
         styleSelectionVidPlayer.Play();
     }
 

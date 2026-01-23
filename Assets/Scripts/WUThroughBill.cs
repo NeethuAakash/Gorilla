@@ -78,34 +78,19 @@ public class WUThroughBill : MonoBehaviour
     public void EnterDetails()
     {
         rawImage.enabled = true;
-        videoPlayer.gameObject.SetActive(true);
         ClearRenderTexture();
+        videoPlayer.gameObject.SetActive(true);
         videoPlayer.Play();
-        // mainBg.GetComponent<SpriteRenderer>().sprite = enterName;
+        Invoke("Zoom",.5f);
     }
-
-    public void ShowNewCustomerEntri()
+    void Zoom()
     {
-        // mainBg.GetComponent<SpriteRenderer>().sprite = newCustomer;
+        rawImage.uvRect = new Rect(0, .5f, 1f, 0.5f);
+        Invoke("ResetZoom",2f);
     }
-
-    public void ShowEnteredCustomerDetails()
+    void ResetZoom()
     {
-        // mainBg.GetComponent<SpriteRenderer>().sprite = customerDetails;
-    }
-
-    public void ShowPurchasedItem1()
-    {
-        // mainBg.GetComponent<SpriteRenderer>().sprite = cartOneItem;
-    }
-    public void ShowPurchasedItems()
-    {
-        // mainBg.GetComponent<SpriteRenderer>().sprite = cartManyItem;
-    }
-
-    public void ShowBill()
-    {
-        // mainBg.GetComponent<SpriteRenderer>().sprite = bill;
+        rawImage.uvRect = new Rect(0, 0, 1f, 1f);
     }
 
     void OnEnable()

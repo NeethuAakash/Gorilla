@@ -81,12 +81,17 @@ public class DSale : MonoBehaviour
 
     public void StartVideo()
     {
-        ClearRenderTexture();
         rawImage.enabled = true;
+        ClearRenderTexture();
         videoPlayer.gameObject.SetActive(true);
         videoPlayer.Play();
+        rawImage.uvRect = new Rect(0, .5f, 0.5f, 0.5f);
+        Invoke("ResetZoom",10f);
     }
-
+    void ResetZoom()
+    {
+        rawImage.uvRect = new Rect(0, 0, 1, 1);
+    }
     void Update()
     {
         if (!audioSource.isPlaying)

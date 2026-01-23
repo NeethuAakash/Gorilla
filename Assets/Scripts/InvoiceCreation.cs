@@ -35,6 +35,8 @@ public class InvoiceCreation : MonoBehaviour
     public VideoPlayer videoPlayer;
     public RenderTexture renderTexture;
     public VideoClip videoClip;
+    public VideoClip videoClipBarcode;
+    public VideoClip videoClipNameEntry;
 
     public List<TimedAction> timedActions;
     public PlayerButtonsManager playerButtonsManager;
@@ -99,11 +101,21 @@ public class InvoiceCreation : MonoBehaviour
     public void TypeName()
     {
         HL_name_phone.SetActive(false);
-        bg.GetComponent<SpriteRenderer>().sprite = spr_nameEntri;
+        // bg.GetComponent<SpriteRenderer>().sprite = spr_nameEntri;
+        ClearRenderTexture();
+        videoPlayer.gameObject.SetActive(true);
+        rawImage.enabled = true;
+        videoPlayer.clip = videoClipNameEntry;
+        videoPlayer.playbackSpeed = 2.2f;
+        rawImage.uvRect = new Rect(0, .25f, 0.75f, 0.75f);
+        videoPlayer.Play();
     }
 
     public void SelectName()
     {
+        rawImage.uvRect = new Rect(0, 0, 1, 1);
+        videoPlayer.gameObject.SetActive(false);
+        rawImage.enabled = false;
         bg.GetComponent<SpriteRenderer>().sprite = spr_nameSelected;
     }
     public void productSearch()
@@ -129,6 +141,7 @@ public class InvoiceCreation : MonoBehaviour
     {
         ClearRenderTexture();
         rawImage.enabled = true;
+        videoPlayer.clip = videoClipBarcode;
         videoPlayer.gameObject.SetActive(true);
         videoPlayer.playbackSpeed = 1f;
         videoPlayer.Play();
@@ -149,6 +162,7 @@ public class InvoiceCreation : MonoBehaviour
     public void PlayBillVideo()
     {
         HL_quickPay.SetActive(false);
+        ClearRenderTexture();
         rawImage.enabled = true;
         videoPlayer.gameObject.SetActive(true);
         videoPlayer.clip = videoClip;

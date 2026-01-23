@@ -49,6 +49,8 @@ public class AIPurchase : MonoBehaviour
     public RenderTexture renderTexture;
     public VideoClip vid_extractData;
     public VideoClip vid_print;
+    public VideoClip vid_getSupplier;
+    public VideoClip vid_priceEdit;
     public List<TimedAction> timedActions;
     void Start()
     {
@@ -133,9 +135,21 @@ public class AIPurchase : MonoBehaviour
          SetCharacterToShow(HL_Get);
     }
 
-    public void LoadFilledSupplier()
+    public void PlayGetSupplierVideo()
     {
         HL_Get.SetActive(false);
+        ClearRenderTexture();
+        videoPlayer.gameObject.SetActive(true);
+        rawImage.enabled = true;
+        videoPlayer.clip = vid_getSupplier;
+        videoPlayer.playbackSpeed = 2f;
+        videoPlayer.Play();
+    }
+
+    public void LoadFilledSupplier()
+    {
+        videoPlayer.gameObject.SetActive(false);
+        rawImage.enabled = false;
         bg.GetComponent<SpriteRenderer>().sprite = spr_filledSplr;
     }
     public void Highlight_RDGorilla()
@@ -161,11 +175,31 @@ public class AIPurchase : MonoBehaviour
     public void ShowExtractVideo()
     {
         HL_UploadFile.SetActive(false);
+        ClearRenderTexture();
         videoPlayer.gameObject.SetActive(true);
         rawImage.enabled = true;
         videoPlayer.clip = vid_extractData;
         videoPlayer.playbackSpeed = 3f;
         videoPlayer.Play();
+    }
+    public void PlayPriceEditVideo()
+    {
+        ClearRenderTexture();
+        videoPlayer.gameObject.SetActive(true);
+        rawImage.enabled = true;
+        videoPlayer.clip = vid_priceEdit;
+        videoPlayer.playbackSpeed = 2.8f;
+        videoPlayer.Play();
+        Invoke("Zoom",2.5f);
+    }
+     void Zoom()
+    {
+        rawImage.uvRect = new Rect(0, .2f, 1f, 0.4f);
+        Invoke("ResetZoom",6f);
+    }
+    void ResetZoom()
+    {
+        rawImage.uvRect = new Rect(0, 0, 1f, 1f);
     }
 
     public void HL_BringToPurchaseEntry()
@@ -206,11 +240,18 @@ public class AIPurchase : MonoBehaviour
     public void ShowPrintVideo()
     {
         HL_Print.SetActive(false);
+        ClearRenderTexture();
         videoPlayer.gameObject.SetActive(true);
         rawImage.enabled = true;
         videoPlayer.clip = vid_print;
         videoPlayer.playbackSpeed = 1.5f;
         videoPlayer.Play();
+         Invoke("Zoom1",1f);
+    }
+     void Zoom1()
+    {
+        rawImage.uvRect = new Rect(0, .4f, 1f, 0.6f);
+        Invoke("ResetZoom",2f);
     }
 
     public void ShowSIHAgain()
@@ -259,7 +300,6 @@ public class AIPurchase : MonoBehaviour
             return;
         audioSource.UnPause();
         StartCoroutine(PlayVoiceWithTimedActions());
-        ClearRenderTexture();
         ResetScreen();
     }
     void ClearRenderTexture()

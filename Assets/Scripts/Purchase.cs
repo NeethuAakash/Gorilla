@@ -162,12 +162,20 @@ public class Purchase : MonoBehaviour
     public void ShowProductEntry1Video()
     {
         HL_BarcodeMarked.SetActive(false);
-        ClearRenderTexture();
         rawImage.enabled = true;
+        Invoke("ZoomRightCenter",2.3f);
+        ClearRenderTexture();
         videoPlayer.gameObject.SetActive(true);
         videoPlayer.clip = vid_entri1;
-        videoPlayer.playbackSpeed = 3;
+        videoPlayer.playbackSpeed = 2;
         videoPlayer.Play();
+    }
+
+    void ZoomRightCenter()
+    {
+        // rawImage.uvRect = new Rect(0.4f, 0.25f, 0.6f, 0.75f);
+        rawImage.uvRect = new Rect(.6f, 0.6f, .4f, 0.4f);
+        Invoke("ResetZoom",1.5f);
     }
 
     public void ShowBgWith1Entry()
@@ -187,11 +195,24 @@ public class Purchase : MonoBehaviour
     public void ShowProductEntri2Video()
     {
         HL_NewProduct.SetActive(false);
+        ClearRenderTexture();
         rawImage.enabled = true;
         videoPlayer.gameObject.SetActive(true);
         videoPlayer.clip = vid_entri2;
-        videoPlayer.playbackSpeed = 2.2f;
+        videoPlayer.playbackSpeed = 2.5f;
         videoPlayer.Play();
+        Invoke("Zoom1",1f);
+    }
+
+    void Zoom1()
+    {
+        rawImage.uvRect = new Rect(0f, 0.4f, .9f, 0.3f);
+        Invoke("ResetZoom",14f);
+    }
+
+    void ResetZoom()
+    {
+        rawImage.uvRect = new Rect(0f, 0f, 1f, 1f);
     }
 
     public void ShowBgWith2Entries()
@@ -222,9 +243,10 @@ public class Purchase : MonoBehaviour
     {
         HL_Print.SetActive(false);
         rawImage.enabled = true;
+        ClearRenderTexture();
         videoPlayer.gameObject.SetActive(true);
         videoPlayer.clip = vid_print;
-        videoPlayer.playbackSpeed = .5f;
+        videoPlayer.playbackSpeed = 1f;
         videoPlayer.Play();
     }
     
@@ -239,12 +261,12 @@ public class Purchase : MonoBehaviour
     {
         HL_PrintBarcode.SetActive(false);
         rawImage.enabled = true;
+        ClearRenderTexture();
         videoPlayer.gameObject.SetActive(true);
         videoPlayer.clip = vid_printBarcode;
-        videoPlayer.playbackSpeed = 1.5f;
+        videoPlayer.playbackSpeed = 2.2f;
         videoPlayer.Play();
     }
-
     void Update()
     {
         if (!audioSource.isPlaying)
@@ -262,7 +284,6 @@ public class Purchase : MonoBehaviour
             return;
         audioSource.UnPause();
         StartCoroutine(PlayVoiceWithTimedActions());
-        ClearRenderTexture();
         ResetScreen();
     }
     void ResetScreen()
