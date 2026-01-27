@@ -15,7 +15,8 @@ public enum VoiceID
     BarcodeDesigns,
     InvoiceCreation,
     Purchase,
-    AIPurchase
+    AIPurchase,
+    SalesmanCommission
 }
 
 [System.Serializable]
