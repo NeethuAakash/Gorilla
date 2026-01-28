@@ -204,7 +204,7 @@ public class SalesmanCommission : MonoBehaviour
         videoPlayer.clip = vid_addCommission;
         videoPlayer.playbackSpeed = 1.5f;
          rawImage.uvRect = new Rect(0, .5f, .5f, 0.5f);
-         Invoke("ResetZoom",8f);
+         Invoke("ResetZoom",9f);
         videoPlayer.Play();
     }
     public void Highlight_SalePOS()
