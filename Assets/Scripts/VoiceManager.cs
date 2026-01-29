@@ -17,7 +17,8 @@ public enum VoiceID
     Purchase,
     AIPurchase,
     SalesmanCommission,
-    DiscountAddingShortcutKeys
+    DiscountAddingShortcutKeys,
+    AutomaticDiscountInInvoice
 }
 
 [System.Serializable]

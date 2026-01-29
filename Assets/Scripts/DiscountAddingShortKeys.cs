@@ -14,40 +14,10 @@ public class DiscountAddingShortKeys : MonoBehaviour
     // public GameObject startTransform;
     // public GameObject popupTransform;
     public GameObject HL_salePOS;
-    // public GameObject HL_salesperson;
-    // public GameObject HL_save;
-    // public GameObject HL_new;
-    // public GameObject HL_utilities;
-    // public GameObject HL_PBE;
-    // public GameObject HL_salesmanPercent;
-    // public GameObject HL_Cell;
-    // public GameObject HL_SalePOS;
-    // public GameObject HL_Salesman;
-    // public GameObject HL_Commission;
-    // public GameObject HL_QuickPay;
-    // public GameObject HL_reports;
-    // public GameObject HL_SPL;
-    // public GameObject HL_inventory;
-    // public GameObject HL_SPP;
-    
     
     public GameObject bg;
     public Sprite spr_mainbg;
-    // public Sprite spr_masterEntry;
-    // public Sprite spr_salesperson;
-    // public Sprite spr_SM1filled;
-    // public Sprite spr_SM1Saved;
-    // public Sprite spr_SM2Empty;
-    // public Sprite spr_SM2saved;
-    // public Sprite spr_utilities;
-    // public Sprite spr_PBE;
     public Sprite spr_sale;
-    // public Sprite spr_saleFilled;
-    // public Sprite spr_saleBill;
-    // public Sprite spr_reports;
-    // public Sprite spr_SPL;
-    // public Sprite spr_inventory;
-    // public Sprite spr_SPP;
 
     public VideoPlayer videoPlayer;
     public RenderTexture renderTexture;
