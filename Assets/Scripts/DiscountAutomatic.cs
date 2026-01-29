@@ -73,8 +73,6 @@ public class DiscountAutomatic : MonoBehaviour
       public void ShowDiscountInSalesVideo()
     {
         ClearRenderTexture();
-        // rawImage.enabled = true;
-        // videoPlayer.gameObject.SetActive(true);
         videoPlayer.clip = vid_discSales;
         videoPlayer.playbackSpeed = 2.5f;
         videoPlayer.Play();
@@ -95,6 +93,7 @@ public class DiscountAutomatic : MonoBehaviour
         menuBtns.SetActive(true);
         bg.GetComponent<SpriteRenderer>().sprite = spr_mainbg;
         character.transform.position = startTransform.transform.position;
+        HL_salePOS.SetActive(false);
     }
     void Update()
     {
