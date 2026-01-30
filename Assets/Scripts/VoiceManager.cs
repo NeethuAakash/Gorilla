@@ -28,7 +28,17 @@ public class VoiceData
     public VoiceID voiceID;
     public AudioClip english;
     public AudioClip hindi;
+    public AudioClip bengali;
+    public AudioClip marathi;
+    public AudioClip telugu;
+    public AudioClip tamil;
+    public AudioClip urdu;
+    public AudioClip gujarati;
+    public AudioClip kannada;
+    public AudioClip odia;
+    public AudioClip punjabi;
     public AudioClip malayalam;
+    public AudioClip assamese;
 
     public AudioClip GetClip(Language lang)
     {
@@ -36,7 +46,17 @@ public class VoiceData
         {
             Language.English => english,
             Language.Hindi => hindi,
+            Language.Bengali => bengali,
+            Language.Marathi => marathi,
+            Language.Telugu => telugu,
+            Language.Tamil => tamil,
+            Language.Urdu => urdu,
+            Language.Gujarati => gujarati,
+            Language.Kannada => kannada,
+            Language.Odia => odia,
+            Language.Punjabi => punjabi,
             Language.Malayalam => malayalam,
+            Language.Assamese => assamese,
             _ => english
         };
     }

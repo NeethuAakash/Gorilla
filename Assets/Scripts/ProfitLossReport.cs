@@ -65,6 +65,12 @@ public class ProfitLossReport : MonoBehaviour
         videoPlayer.clip = vid_addItems;
         videoPlayer.playbackSpeed = 5f;
         videoPlayer.Play();
+        Invoke("ZoomBarcode",1.5f);
+    }
+    void ZoomBarcode()
+    {
+        rawImage.uvRect = new Rect(0f, .5f, .8f, 0.5f);
+        Invoke("ResetZoom",2f);
     }
 
     public void ShowProfitLossVideo()
@@ -73,6 +79,12 @@ public class ProfitLossReport : MonoBehaviour
         videoPlayer.clip = vid_profitLoss;
         videoPlayer.playbackSpeed = .9f;
         videoPlayer.Play();
+        Invoke("ZoomPrice",30f);
+    }
+    void ZoomPrice()
+    {
+        rawImage.uvRect = new Rect(0.5f, .5f, .5f, 0.5f);
+        Invoke("ResetZoom",4f);
     }
 
 
@@ -126,10 +138,10 @@ public class ProfitLossReport : MonoBehaviour
     //     character.transform.localScale = new Vector3(1,1,1);
     //     character.GetComponent<Animator>().SetTrigger("doTouch");
     // }
-    // void ResetZoom()
-    // {
-    //     rawImage.uvRect = new Rect(0, 0, 1f, 1f);
-    // }
+    void ResetZoom()
+    {
+        rawImage.uvRect = new Rect(0, 0, 1f, 1f);
+    }
     // public void ClearVideo()
     // {
     //     rawImage.enabled = false;

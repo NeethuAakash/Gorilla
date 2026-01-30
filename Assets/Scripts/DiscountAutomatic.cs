@@ -69,6 +69,20 @@ public class DiscountAutomatic : MonoBehaviour
         videoPlayer.clip = vid_discGorilla;
         videoPlayer.playbackSpeed = 1.7f;
         videoPlayer.Play();
+        Invoke("ZoomBarcode",.1f);
+        Invoke("ZoomSetDefault",15f);
+        Invoke("ZoomBarcode",24f);
+    }
+    
+    void ZoomBarcode()
+    {
+        rawImage.uvRect = new Rect(.2f, .5f, .8f, 0.5f);
+        Invoke("ResetZoom",6f);
+    }
+    void ZoomSetDefault()
+    {
+        rawImage.uvRect = new Rect(0f, 0f, .5f, 0.5f);
+        Invoke("ResetZoom",1.5f);
     }
       public void ShowDiscountInSalesVideo()
     {
@@ -131,10 +145,10 @@ public class DiscountAutomatic : MonoBehaviour
     //     character.transform.localScale = new Vector3(1,1,1);
     //     character.GetComponent<Animator>().SetTrigger("doTouch");
     // }
-    // void ResetZoom()
-    // {
-    //     rawImage.uvRect = new Rect(0, 0, 1f, 1f);
-    // }
+    void ResetZoom()
+    {
+        rawImage.uvRect = new Rect(0, 0, 1f, 1f);
+    }
     // public void ClearVideo()
     // {
     //     rawImage.enabled = false;

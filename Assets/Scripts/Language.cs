@@ -2,5 +2,15 @@ public enum Language
 {
     English,
     Hindi,
-    Malayalam
+    Bengali,
+    Marathi,
+    Telugu,
+    Tamil,
+    Urdu,
+    Gujarati,
+    Kannada,
+    Odia,
+    Punjabi,
+    Malayalam,
+    Assamese
 }
