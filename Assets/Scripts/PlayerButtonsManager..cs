@@ -41,21 +41,24 @@ public class PlayerButtonsManager : MonoBehaviour
 
     public void onBackButtonPressed(GameObject currentScreen)
     {
-        AudioSource[] audios = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
-
-        foreach (AudioSource audio in audios)
+       if(currentScreen.activeSelf)
         {
-            audio.Pause();
-        }
+             AudioSource[] audios = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
 
-        if (currentScreen.name.Equals("FeatureSelection"))
-        {
+            foreach (AudioSource audio in audios)
+            {
+                audio.Pause();
+            }
+
+            if (currentScreen.name.Equals("FeatureSelection"))
+            {
+                currentScreen.SetActive(false);
+                languageSelectionScreen.SetActive(true);
+                return;
+            }
             currentScreen.SetActive(false);
-            languageSelectionScreen.SetActive(true);
-            return;
+            featureSelectionScreen.SetActive(true);
+            print("onBackButtonPressed"+currentScreen.name);
         }
-        currentScreen.SetActive(false);
-        featureSelectionScreen.SetActive(true);
-        print("onBackButtonPressed"+currentScreen.name);
     }
 }
